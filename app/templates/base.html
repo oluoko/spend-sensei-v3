@@ -1,0 +1,103 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Spend Sensei {% block title %} {% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Bootstrap core CSS -->
+    <link
+      href="{% static 'css/bootstrap.min.css/cyborg.min.css'%}"
+      rel="stylesheet"
+    />
+    {% comment %}
+    <link
+      href="{% static 'css/bootstrap.min.css/brite.min.css'%}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'css/bootstrap.min.css/lux.min.css'%}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'css/bootstrap.min.css/morph.min.css'%}"
+      rel="stylesheet"
+    />
+    {% endcomment %}
+    <link href="{% static 'css/main.css'%}" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/dashboard.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/sidebar.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Claude-style sidebar with toggle and logos -->
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-toggle" id="sidebarToggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="logo-container">
+          <img
+            src="{% static 'img/Spend Sensei Logo W.png' %}"
+            alt="Logo"
+            class="logo"
+          />
+        </div>
+      </div>
+
+      {% include 'partials/_sidebar.html' %}
+    </nav>
+
+    <!-- Top navbar for other content -->
+    <nav
+      class="navbar navbar-dark bg-dark flex-md-nowrap p-0 shadow"
+      id="topNav"
+    >
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
+        <!-- We'll leave this empty as our logo is now in the sidebar -->
+      </a>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">
+            <i class="fa-solid fa-user"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <main role="main" id="mainContent" class="main-content">
+        {% block content %} {% endblock %}
+      </main>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="/docs/4.4/static/js/vendor/jquery.slim.min.js"><\/script>'
+        );
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/navigation.js' %}"></script>
+  </body>
+</html>

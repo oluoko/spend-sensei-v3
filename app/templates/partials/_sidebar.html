@@ -1,0 +1,138 @@
+{% load static %}
+<div class="sidebar-sticky">
+  <!-- Main Menu -->
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">
+        <div class="nav-icon">
+          <i class="fa-solid fa-home menu-icon"></i>
+        </div>
+        <span class="nav-link-text">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'expenses' %}">
+        <div class="nav-icon">
+          <i class="fa-solid fa-credit-card menu-icon"></i>
+        </div>
+        <span class="nav-link-text">Expenses</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <div class="nav-icon">
+          <i class="fa-solid fa-dollar-sign menu-icon"></i>
+        </div>
+        <span class="nav-link-text">Income</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <div class="nav-icon">
+          <i class="fa-solid fa-chart-line menu-icon"></i>
+        </div>
+        <span class="nav-link-text">Budget</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="section-divider"></div>
+
+  <!-- Summary Section -->
+  <h6 class="sidebar-heading">Summary</h6>
+  <ul class="nav flex-column mb-2">
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <div class="nav-icon">
+          <i class="fa-solid fa-chart-bar menu-icon"></i>
+        </div>
+        <span class="nav-link-text">Expenses Summary</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <div class="nav-icon">
+          <i class="fa-solid fa-chart-pie menu-icon"></i>
+        </div>
+        <span class="nav-link-text">Income Summary</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <div class="nav-icon">
+          <i class="fa-solid fa-chart-line menu-icon"></i>
+        </div>
+        <span class="nav-link-text">Monthly Report</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="section-divider"></div>
+
+  <!-- Settings Section -->
+  <h6 class="sidebar-heading">Settings</h6>
+  <ul class="nav flex-column mb-2">
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <div class="nav-icon">
+          <i class="fa-solid fa-user menu-icon"></i>
+        </div>
+        <span class="nav-link-text">Account</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <div class="nav-icon">
+          <i class="fa-solid fa-shield menu-icon"></i>
+        </div>
+        <span class="nav-link-text">Security</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <div class="nav-icon">
+          <i class="fa-solid fa-bell menu-icon"></i>
+        </div>
+        <span class="nav-link-text">Notifications</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <div class="nav-icon">
+          <i class="fa-solid fa-right-from-bracket menu-icon"></i>
+        </div>
+        <span class="nav-link-text">Logout</span>
+      </a>
+    </li>
+  </ul>
+
+  <!-- Mobile Bottom Navigation -->
+  <div class="mobile-nav-wrapper">
+    <ul class="mobile-nav">
+      <li class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link active">
+          <i class="fa-solid fa-home"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="{% url 'expenses' %}" class="mobile-nav-link">
+          <i class="fa-solid fa-credit-card"></i>
+          <span>Expenses</span>
+        </a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Budget</span>
+        </a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link">
+          <i class="fa-solid fa-user"></i>
+          <span>Account</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
