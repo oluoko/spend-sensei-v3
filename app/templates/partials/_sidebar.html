@@ -1,138 +1,79 @@
 {% load static %}
-<div class="sidebar-sticky">
-  <!-- Main Menu -->
-  <ul class="nav flex-column">
-    <li class="nav-item">
-      <a class="nav-link active" href="#">
-        <div class="nav-icon">
-          <i class="fa-solid fa-home menu-icon"></i>
-        </div>
-        <span class="nav-link-text">Dashboard</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{% url 'expenses' %}">
-        <div class="nav-icon">
-          <i class="fa-solid fa-credit-card menu-icon"></i>
-        </div>
-        <span class="nav-link-text">Expenses</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <div class="nav-icon">
-          <i class="fa-solid fa-dollar-sign menu-icon"></i>
-        </div>
-        <span class="nav-link-text">Income</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <div class="nav-icon">
-          <i class="fa-solid fa-chart-line menu-icon"></i>
-        </div>
-        <span class="nav-link-text">Budget</span>
-      </a>
-    </li>
-  </ul>
-
-  <div class="section-divider"></div>
-
-  <!-- Summary Section -->
-  <h6 class="sidebar-heading">Summary</h6>
-  <ul class="nav flex-column mb-2">
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <div class="nav-icon">
-          <i class="fa-solid fa-chart-bar menu-icon"></i>
-        </div>
-        <span class="nav-link-text">Expenses Summary</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <div class="nav-icon">
-          <i class="fa-solid fa-chart-pie menu-icon"></i>
-        </div>
-        <span class="nav-link-text">Income Summary</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <div class="nav-icon">
-          <i class="fa-solid fa-chart-line menu-icon"></i>
-        </div>
-        <span class="nav-link-text">Monthly Report</span>
-      </a>
-    </li>
-  </ul>
-
-  <div class="section-divider"></div>
-
-  <!-- Settings Section -->
-  <h6 class="sidebar-heading">Settings</h6>
-  <ul class="nav flex-column mb-2">
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <div class="nav-icon">
-          <i class="fa-solid fa-user menu-icon"></i>
-        </div>
-        <span class="nav-link-text">Account</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <div class="nav-icon">
-          <i class="fa-solid fa-shield menu-icon"></i>
-        </div>
-        <span class="nav-link-text">Security</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <div class="nav-icon">
-          <i class="fa-solid fa-bell menu-icon"></i>
-        </div>
-        <span class="nav-link-text">Notifications</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <div class="nav-icon">
-          <i class="fa-solid fa-right-from-bracket menu-icon"></i>
-        </div>
-        <span class="nav-link-text">Logout</span>
-      </a>
-    </li>
-  </ul>
-
-  <!-- Mobile Bottom Navigation -->
-  <div class="mobile-nav-wrapper">
-    <ul class="mobile-nav">
-      <li class="mobile-nav-item">
-        <a href="#" class="mobile-nav-link active">
-          <i class="fa-solid fa-home"></i>
-          <span>Home</span>
+<nav class="col-md-2 d-md-block bg-light sidebar">
+  <div class="sidebar-sticky">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">
+          <i class="fa-solid fa-gauge-high mr-2"></i>
+          Dashboard <span class="sr-only">(current)</span>
         </a>
       </li>
-      <li class="mobile-nav-item">
-        <a href="{% url 'expenses' %}" class="mobile-nav-link">
-          <i class="fa-solid fa-credit-card"></i>
-          <span>Expenses</span>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'expenses' %}">
+          <i class="fa-solid fa-receipt mr-2"></i>
+          Expenses
         </a>
       </li>
-      <li class="mobile-nav-item">
-        <a href="#" class="mobile-nav-link">
-          <i class="fa-solid fa-chart-line"></i>
-          <span>Budget</span>
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="fa-solid fa-money-bill-trend-up mr-2"></i>
+          Income
         </a>
       </li>
-      <li class="mobile-nav-item">
-        <a href="#" class="mobile-nav-link">
-          <i class="fa-solid fa-user"></i>
-          <span>Account</span>
+    </ul>
+
+    <h6
+      class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"
+    >
+      <span>Summary</span>
+      <a
+        class="d-flex align-items-center text-muted"
+        href="#"
+        aria-label="Add a new report"
+      >
+        <i class="fa-solid fa-circle-plus"></i>
+      </a>
+    </h6>
+    <ul class="nav flex-column mb-2">
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fa-solid fa-chart-pie mr-2"></i>
+          Expenses Summary
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fa-solid fa-chart-line mr-2"></i>
+          Income Summary
+        </a>
+      </li>
+    </ul>
+
+    <h6
+      class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"
+    >
+      <span>Settings</span>
+      <a
+        class="d-flex align-items-center text-muted"
+        href="#"
+        aria-label="Add a new report"
+      >
+        <i class="fa-solid fa-circle-plus"></i>
+      </a>
+    </h6>
+    <ul class="nav flex-column mb-2">
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="fa-solid fa-sliders mr-2"></i>
+          General
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fa-solid fa-user-gear mr-2"></i>
+          Account
         </a>
       </li>
     </ul>
   </div>
-</div>
+</nav>

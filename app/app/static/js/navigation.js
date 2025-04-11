@@ -1,58 +1,57 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Initialize feather icons
-  feather.replace();
-
-  // Elements
   const sidebarToggle = document.getElementById("sidebarToggle");
-  const sidebar = document.getElementById("sidebar");
-  const mainContent = document.getElementById("mainContent");
-  const navbarBrand = document.querySelector(".navbar-brand");
-  const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
+  const sidebar = document.querySelector(".sidebar");
+  const body = document.body;
 
-  // Set initial state from localStorage
-  const sidebarState = localStorage.getItem("sidebarState");
-  if (sidebarState === "expanded" && window.innerWidth >= 768) {
-    sidebar.classList.add("sidebar-expanded");
-    mainContent.classList.add("main-content-expanded");
-  } else {
-    sidebar.classList.add("sidebar-collapsed");
-    navbarBrand.classList.add("shifted");
-  }
+  // Create overlay element
+  const overlay = document.createElement("div");
+  overlay.classList.add("sidebar-overlay");
+  document.body.appendChild(overlay);
 
-  // Toggle sidebar on click
-  sidebarToggle.addEventListener("click", function () {
-    sidebar.classList.toggle("sidebar-expanded");
-    sidebar.classList.toggle("sidebar-collapsed");
-    mainContent.classList.toggle("main-content-expanded");
-    navbarBrand.classList.toggle("shifted");
-
-    // Save state to localStorage
-    localStorage.setItem(
-      "sidebarState",
-      sidebar.classList.contains("sidebar-expanded") ? "expanded" : "collapsed"
-    );
-  });
-
-  // Add click event to each mobile link
-  mobileNavLinks.forEach((link) => {
-    link.addEventListener("click", function () {
-      mobileNavLinks.forEach((l) => l.classList.remove("active"));
-      this.classList.add("active");
-    });
-  });
-
-  // Handle responsive behavior
+  // Function to check window width and set initial state
   function checkWidth() {
     if (window.innerWidth < 768) {
-      sidebar.classList.remove("sidebar-expanded");
-      sidebar.classList.add("sidebar-collapsed");
-      mainContent.classList.remove("main-content-expanded");
-      navbarBrand.classList.add("shifted");
+      body.classList.remove("sidebar-visible");
+      body.classList.add("sidebar-hidden");
+    } else {
+      body.classList.add("sidebar-visible");
+      body.classList.remove("sidebar-hidden");
     }
   }
 
-  // Initial check & listen for window resize
+  // Initial check
   checkWidth();
-  window.addEventListener("resize", checkWidth);
-  window.addEventListener("orientationchange", checkWidth);
+
+  // Toggle sidebar visibility
+  sidebarToggle.addEventListener("click", function () {
+    if (body.classList.contains("sidebar-visible")) {
+      body.classList.remove("sidebar-visible");
+      body.classList.add("sidebar-hidden");
+    } else {
+      body.classList.add("sidebar-visible");
+      body.classList.remove("sidebar-hidden");
+    }
+  });
+
+  // Close sidebar when clicking on overlay (mobile only)
+  overlay.addEventListener("click", function () {
+    if (window.innerWidth < 768) {
+      body.classList.remove("sidebar-visible");
+    }
+  });
+
+  // Update sidebar state on window resize
+  window.addEventListener("resize", function () {
+    checkWidth();
+  });
+
+  // Close sidebar when clicking on a link (mobile only)
+  const sidebarLinks = document.querySelectorAll(".sidebar .nav-link");
+  sidebarLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      if (window.innerWidth < 768) {
+        body.classList.remove("sidebar-visible");
+      }
+    });
+  });
 });
